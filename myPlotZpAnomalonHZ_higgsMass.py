@@ -93,7 +93,7 @@ if __name__=='__main__':
     hSDvpT_fat_gen_uncorr_0eta1d3 = ROOT.TH2F("hSDvpT_fat_gen_uncorr_0eta1d3","gen uncorr eta 1.3 sd vs pt",40,200,1200,28,10,150)
     hSDvpT_fat_gen_corr_0eta1d3 = ROOT.TH2F("hSDvpT_fat_gen_corr_0eta1d3","gen corr eta 1.3 sd vs pt",40,200,1200,28,10,150)
 
-        #soft drop mass closest higgs cand vs. pT 1.3 <= eta < 2.5
+    #soft drop mass closest higgs cand vs. pT 1.3 <= eta < 2.5
     hSDvpT_sfat_reco_uncorr_1d3eta2d5 = ROOT.TH2F("hSDvpT_sfat_reco_uncorr_1d3eta2d5","runcor beta h sdvpt",40,200,1200,28,10,150)
     hSDvpT_sfat_reco_corr_1d3eta2d5 = ROOT.TH2F("hSDvpT_sfat_reco_corr_1d3eta2d5","reco corr beta h sdvpt",40,200,1200,28,10,150)
     hSDvpT_sfat_gen_uncorr_1d3eta2d5 = ROOT.TH2F("hSDvpT_sfat_gen_uncorr_1d3eta2d5","guncor 13eta25 h sdvpt",40,200,1200,28,10,150)
@@ -113,8 +113,8 @@ if __name__=='__main__':
             print "analyzing event ",i
 
         #Gather jets from a desired mass window and eta < 2.5
-        #ghcandlist = jetGrabber(ch.GenJetsAK8,ch.GenJetsAK8_softDropMass,20.0,150.0,sd_corrGEN,sd_corrRECO_cen,sd_corrRECO_for)
-        #rhcandlist = jetGrabber(ch.JetsAK8Clean,ch.JetsAK8Clean_softDropMass,20.0,150.0,sd_corrGEN,sd_corrRECO_cen,sd_corrRECO_for)
+        ghcandlist = jetGrabber(ch.GenJetsAK8,ch.GenJetsAK8_softDropMass,20.0,150.0,sd_corrGEN,sd_corrRECO_cen,sd_corrRECO_for)
+        rhcandlist = jetGrabber(ch.JetsAK8Clean,ch.JetsAK8Clean_softDropMass,20.0,150.0,sd_corrGEN,sd_corrRECO_cen,sd_corrRECO_for)
 
         #Find jet closest to Higgs mass
         if ghcandlist != []:
