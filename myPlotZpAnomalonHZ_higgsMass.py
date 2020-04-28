@@ -16,13 +16,10 @@ if __name__=='__main__':
     is_sig = args.isSig
 
     #Gather the troops
-<<<<<<< HEAD
     ch = ROOT.TChain("TreeMaker2/PreSelection")
     inlist = glob.glob('../RestFrames/sigSamplesCommitf27c357/'+samp+'*.root')
-=======
     ch = ROOT.TChain("TreeMaker2/Preselection")
     inlist = glob.glob('sigSamplesCommitf27c357/'+samp+'*.root')
->>>>>>> parent of b57f5ae... broken garbage collecting deleting my histograms
     genzp,gennd,genns = geco_base.massPoints(samp)
     for f in inlist:
         ch.Add(f)
@@ -110,15 +107,14 @@ if __name__=='__main__':
 
 
     #Start analysis
-<<<<<<< HEAD
     print "beginning event loop"
     for i,event in enumerate(ch):
         if i % 5000 == 0:
             print "analyzing event ",i
 
         #Gather jets from a desired mass window and eta < 2.5
-        ghcandlist = jetGrabber(ch.GenJetsAK8,ch.GenJetsAK8_softDropMass,20.0,150.0,sd_corrGEN,sd_corrRECO_cen,sd_corrRECO_for)
-        rhcandlist = jetGrabber(ch.JetsAK8Clean,ch.JetsAK8Clean_softDropMass,20.0,150.0,sd_corrGEN,sd_corrRECO_cen,sd_corrRECO_for)
+        #ghcandlist = jetGrabber(ch.GenJetsAK8,ch.GenJetsAK8_softDropMass,20.0,150.0,sd_corrGEN,sd_corrRECO_cen,sd_corrRECO_for)
+        #rhcandlist = jetGrabber(ch.JetsAK8Clean,ch.JetsAK8Clean_softDropMass,20.0,150.0,sd_corrGEN,sd_corrRECO_cen,sd_corrRECO_for)
 
         #Find jet closest to Higgs mass
         if ghcandlist != []:
@@ -197,10 +193,3 @@ if __name__=='__main__':
     outfile.Close()
     sdFile.Close()
                  
-                 
-
-
-=======
-    
->>>>>>> parent of b57f5ae... broken garbage collecting deleting my histograms
-    
